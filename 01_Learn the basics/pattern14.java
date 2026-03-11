@@ -4,10 +4,9 @@ class pattern14 {
 
             // Inner loop to print alphabets from A to A + i
             for (char ch = 'A'; ch <= 'A' + i; ch++) {
-                System.out.print(ch + " "); // Print the character followed by a space
+                System.out.print(ch + " ");
             }
 
-            // Move to the next line after printing the current row
             System.out.println();
         }
     }
