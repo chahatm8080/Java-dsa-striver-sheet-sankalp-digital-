@@ -3,8 +3,8 @@ public class recursion_print1ton43 {
     if (current > n) {
       return;
     }
-    System.out.println(current);
     print1ton(current + 1, n);
+    System.out.println(current);
   }
 
   public static void main(String[] args) {
