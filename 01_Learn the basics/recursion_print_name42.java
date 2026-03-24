@@ -1,4 +1,4 @@
-public class recursion_print_name {
+public class recursion_print_name42 {
   public void printName(String name, int count, int N) {
     if (count == N) {
       return;
@@ -8,7 +8,7 @@ public class recursion_print_name {
   }
 
   public static void main(String[] args) {
-    recursion_print_name sol = new recursion_print_name();
+    recursion_print_name42 sol = new recursion_print_name42();
     int n = 5;
     String name = "chahat";
     sol.printName(name, 0, n);
