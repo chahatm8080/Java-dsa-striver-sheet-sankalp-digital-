@@ -2,9 +2,8 @@ public class printnto1_35 {
     public void printNumbers(int current) {
         if (current < 1)
             return;
-        System.out.print(current + " ");
-
         printNumbers(current - 1);
+        System.out.print(current + " ");
     }
 
     public static void main(String[] args) {
