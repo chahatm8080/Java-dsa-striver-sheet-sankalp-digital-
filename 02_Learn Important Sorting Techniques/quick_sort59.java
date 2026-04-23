@@ -3,9 +3,9 @@ import java.util.Scanner;
 class Solution {
   public void qckSort(int[] arr, int low, int high) {
     if (low < high) {
-      int pivIndPartition = partition(arr, low, high);
-      qckSort(arr, low, pivIndPartition - 1);
-      qckSort(arr, pivIndPartition + 1, high);
+      int pivot = partition(arr, low, high);
+      qckSort(arr, low, pivot - 1);
+      qckSort(arr, pivot + 1, high);
     }
   }
 
@@ -17,8 +17,7 @@ class Solution {
       while (arr[i] <= pivot && i <= high - 1) {
         i++;
       }
-
-      while (arr[j] > pivot && j >= low + 1) {
+      while (arr[j] >= pivot && j >= low + 1) {
         j--;
       }
       if (i < j) {
@@ -30,7 +29,6 @@ class Solution {
     int temp = arr[low];
     arr[low] = arr[j];
     arr[j] = temp;
-
     return j;
   }
 }
