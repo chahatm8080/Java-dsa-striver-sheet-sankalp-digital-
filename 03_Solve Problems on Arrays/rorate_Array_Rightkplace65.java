@@ -1,20 +1,27 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 class rorate_Array_Rightkplace65 {
-  public static void rotRight(int[] arr, int k) {
-    int n = arr.length;
-    if (n == 0)
+  public static void rotateRight(int[] arr, int left, int right) {
+    if (arr.length <= 1)
+      return;
+    while (left < right) {
+      int temp = arr[left];
+      arr[left] = arr[right];
+      arr[right] = temp;
+      left++;
+      right--;
+    }
+  }
+
+  public static void rotRight(int[] nums, int k) {
+    int n = nums.length;
+    if (n == 0 || k == 0)
       return;
     k = k % n;
-    int[] temp = Arrays.copyOfRange(arr, n - k, n);
-    for (int i = n - k - 1; i >= 0; i--) {
-      arr[i + k] = arr[i];
-    }
-    for (int i = 0; i < k; i++) {
-      arr[i] = temp[i];
-    }
-    for (int num : arr) {
+    rotateRight(nums, 0, n - k - 1);
+    rotateRight(nums, n - k, n - 1);
+    rotateRight(nums, 0, n - 1);
+    for (int num : nums) {
       System.out.print(num + " ");
     }
   }
