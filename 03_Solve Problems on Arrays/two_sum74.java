@@ -2,15 +2,26 @@ import java.util.*;
 
 class Solution {
   public String two_sum(int[] arr, int target) {
+    // int n = arr.length;
+    // for (int i = 0; i < n; i++) {
+    // for (int j = i + 1; j < n; j++) {
+    // if ((arr[i] + arr[j]) == target) {
+    // return "Yes";
+    // }
+    // }
+    // }
+    // return "NO";
+    // }
+    Map<Integer, Integer> mpp = new HashMap<>();
     int n = arr.length;
     for (int i = 0; i < n; i++) {
-      for (int j = i + 1; j < n; j++) {
-        if ((arr[i] + arr[j]) == target) {
-          return "Yes";
-        }
+      int target_found = target - arr[i];
+      if (mpp.containsKey(target_found)) {
+        return mpp.get(target_found) + " " + i;
       }
+      mpp.put(arr[i], i);
     }
-    return "NO";
+    return "-1 -1";
   }
 }
 
@@ -20,7 +31,7 @@ class two_sum74 {
     Solution sol = new Solution();
     System.out.println("Enter size of array:");
     int n = sc.nextInt();
-    int target = 9;
+    int target = 6;
     int arr[] = new int[n];
     System.out.println("Enter elements in array");
     for (int i = 0; i < n; i++) {
