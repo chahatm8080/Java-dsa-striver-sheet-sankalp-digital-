@@ -8,13 +8,13 @@ class selection_sort53 {
         if (arr[j] < arr[mini]) {
           mini = j;
         }
+        int temp = arr[mini];
+        arr[mini] = arr[i];
+        arr[i] = temp;
       }
-      int temp = arr[mini];
-      arr[mini] = arr[i];
-      arr[i] = temp;
-    }
-    for (int num : arr) {
-      System.out.print(num + " ");
+      for (int num : arr) {
+        System.out.print(num + " ");
+      }
     }
   }
 
