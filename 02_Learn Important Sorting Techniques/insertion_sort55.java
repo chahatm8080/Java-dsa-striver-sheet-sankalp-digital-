@@ -2,19 +2,14 @@ import java.util.Scanner;
 
 class insertion_sort55 {
   public static void insertion_sorts(int[] arr, int n) {
-    // for (int i = 1; i < n; i++) {
-    // int j = i;
-    // while (j > 0 && arr[j - 1] > arr[j]) {
-    // int temp = arr[j - 1];
-    // arr[j - 1] = arr[j];
-    // arr[j] = temp;
-    // j--;
-    // }
-    // }
-
-    int pivot = arr[0];
-    while (i < j) {
-
+    for (int i = 1; i < n; i++) {
+      int j = i;
+      while (j > 0 && arr[j - 1] > arr[j]) {
+        int temp = arr[j - 1];
+        arr[j - 1] = arr[j];
+        arr[j] = temp;
+        j--;
+      }
     }
     for (int num : arr) {
       System.out.print(num + " ");
