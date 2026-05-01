@@ -15,19 +15,17 @@ class Solution {
     // }
     // return maxi;
     int n = arr.length;
-    Map<Integer, Integer> mpp = new HashMap<>();
     int maxi = 0;
-    int sum = 0;
+    int prefix_sum = 0;
+    Map<Integer, Integer> mpp = new HashMap<>();
     for (int i = 0; i < n; i++) {
-      sum += arr[i];
-      if (sum == 0) {
+      prefix_sum += arr[i];
+      if (prefix_sum == 0) {
         maxi = i + 1;
+      } else if (mpp.containsKey(prefix_sum)) {
+        maxi = Math.max(maxi, i - mpp.get(prefix_sum));
       } else {
-        if (mpp.containsKey(sum)) {
-          maxi = Math.max(maxi, i - mpp.get(sum));
-        } else {
-          mpp.put(sum, i);
-        }
+        mpp.put(prefix_sum, i);
       }
     }
     return maxi;
