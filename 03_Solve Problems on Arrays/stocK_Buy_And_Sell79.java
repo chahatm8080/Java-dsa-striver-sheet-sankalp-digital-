@@ -3,15 +3,31 @@ import java.util.Scanner;
 class Solution {
   public int stockBuySell(int[] arr) {
     // --------------- Bruteforce method
+    // int maxi = 0;
+    // int n = arr.length;
+    // for (int i = 0; i < n - 1; i++) {
+    // for (int j = i + 1; j < n; j++) {
+    // int stock = arr[j] - arr[i];
+    // if (stock > maxi) {
+    // maxi = stock;
+    // }
+    // }
+    // }
+    // return maxi;
+
+    // -------------------optimal
+    int left = 0;
+    int right = 1;
     int maxi = 0;
-    int n = arr.length;
-    for (int i = 0; i < n - 1; i++) {
-      for (int j = i + 1; j < n; j++) {
-        int stock = arr[j] - arr[i];
-        if (stock > maxi) {
-          maxi = stock;
-        }
+    while (right < arr.length) {
+      if (arr[left] < arr[right]) {
+        int profit = arr[right] - arr[left];
+        maxi = Math.max(maxi, profit);
+
+      } else {
+        left++;
       }
+      right++;
     }
     return maxi;
   }
