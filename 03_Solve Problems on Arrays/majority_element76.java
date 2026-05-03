@@ -1,6 +1,4 @@
-import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Map;
 
 class Solution {
   public int majElement(int[] arr) {
@@ -17,17 +15,39 @@ class Solution {
     // }
     // }
     // return -1;
+    // int n = arr.length;
+    // Map<Integer, Integer> mpp = new HashMap<>();
+    // for (int num : arr) {
+    // mpp.put(num, mpp.getOrDefault(num, 0) + 1);
+    // }
+    // for (Map.Entry<Integer, Integer> entry : mpp.entrySet()) {
+    // if (entry.getValue() > n / 2) {
+    // return entry.getKey();
+    // }
+    // }
+    // return -1;
     int n = arr.length;
-    Map<Integer, Integer> mpp = new HashMap<>();
-    for (int num : arr) {
-      mpp.put(num, mpp.getOrDefault(num, 0) + 1);
-    }
-    for (Map.Entry<Integer, Integer> entry : mpp.entrySet()) {
-      if (entry.getValue() > n / 2) {
-        return entry.getKey();
+    int count = 0;
+    int elmnt = 0;
+    for (int i = 0; i < n; i++) {
+      if (count == 0) {
+        elmnt = arr[i];
+        count++;
+      } else if (arr[i] == elmnt) {
+        count++;
+      } else {
+        count--;
       }
     }
-    return -1;
+    int count1 = 0;
+    for (int i = 0; i < n; i++) {
+      if (arr[i] == elmnt)
+        count1++;
+    }
+    if (count1 > n / 2)
+      return elmnt;
+    else
+      return -1;
   }
 }
 
