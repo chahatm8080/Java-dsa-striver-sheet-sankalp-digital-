@@ -3,22 +3,33 @@ import java.util.*;
 class Solution {
   public int[] reElementBySign(int[] arr) {
     int n = arr.length;
-    List<Integer> positive = new ArrayList<>();
-    List<Integer> negative = new ArrayList<>();
+    // List<Integer> positive = new ArrayList<>();
+    // List<Integer> negative = new ArrayList<>();
+    // for (int i = 0; i < n; i++) {
+    // if (arr[i] > 0) {
+    // positive.add(arr[i]);
+    // } else {
+    // negative.add(arr[i]);
+    // }
+    // }
+    // for (int i = 0; i < n / 2; i++) {
+    // arr[2 * i] = positive.get(i);
+    // arr[2 * i + 1] = negative.get(i);
+    // }
+    // return arr;
+    int[] ans = new int[n];
+    int pos = 0, neg = 1;
     for (int i = 0; i < n; i++) {
-      if (arr[i] > 0) {
-        positive.add(arr[i]);
+      if (arr[i] < 0) {
+        ans[neg] = arr[i];
+        neg += 2;
       } else {
-        negative.add(arr[i]);
+        ans[pos] = arr[i];
+        pos += 2;
       }
     }
-    for (int i = 0; i < n / 2; i++) {
-      arr[2 * i] = positive.get(i);
-      arr[2 * i + 1] = negative.get(i);
-    }
-    return arr;
+    return ans;
   }
-
 }
 
 class rearrange_Elements_By_Sign80 {
@@ -33,8 +44,8 @@ class rearrange_Elements_By_Sign80 {
       arr[i] = sc.nextInt();
     }
     System.out.println("After consecutive arrangements of elements: ");
-    int[] temp = sol.reElementBySign(arr);
-    for (int num : temp) {
+    int[] result = sol.reElementBySign(arr);
+    for (int num : result) {
       System.out.print(num + " ");
     }
     sc.close();
