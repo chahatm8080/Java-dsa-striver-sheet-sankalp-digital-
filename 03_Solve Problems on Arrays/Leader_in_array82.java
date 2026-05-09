@@ -2,21 +2,35 @@ import java.util.*;
 
 class Solution {
   public ArrayList<Integer> Leaders(int[] arr) {
+    // int n = arr.length;
+    // ArrayList<Integer> ls = new ArrayList<>();
+    // for (int i = 0; i < n; i++) {
+    // boolean leader = true;
+    // for (int j = i + 1; j < n; j++) {
+    // if (arr[j] > arr[i]) {
+    // leader = false;
+    // break;
+    // }
+    // }
+    // if (leader) {
+    // ls.add(arr[i]);
+    // }
+    // }
+    // return ls;
     int n = arr.length;
-    ArrayList<Integer> ls = new ArrayList<>();
-    for (int i = 0; i < n; i++) {
-      boolean leader = true;
-      for (int j = i + 1; j < n; j++) {
-        if (arr[j] > arr[i]) {
-          leader = false;
-          break;
-        }
-      }
-      if (leader) {
-        ls.add(arr[i]);
+    ArrayList<Integer> ans = new ArrayList<>();
+    if (n == 0)
+      return ans;
+    int max = arr[n - 1];
+    ans.add(arr[n - 1]);
+    for (int i = n - 2; i >= 0; i--) {
+      if (arr[i] > max) {
+        max = Math.max(max, arr[i]);
+        ans.add(arr[i]);
       }
     }
-    return ls;
+    Collections.reverse(ans);
+    return ans;
   }
 }
 
