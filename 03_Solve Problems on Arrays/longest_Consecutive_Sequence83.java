@@ -1,27 +1,35 @@
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 class Solution {
-  public boolean linear_Search(int[] arr, int elmnt) {
-    int n = arr.length;
-    for (int i = 0; i < n; i++) {
-      if (arr[i] == elmnt) {
-        return true;
-      }
-    }
-    return false;
-  }
+  // public boolean linear_Search(int[] arr, int elmnt) {
+  // int n = arr.length;
+  // for (int i = 0; i < n; i++) {
+  // if (arr[i] == elmnt) {
+  // return true;
+  // }
+  // }
+  // return false;
+  // }
 
   public int longest_Consecutive_Sequence(int[] arr) {
     int n = arr.length;
-    int longest = 1;
+    Set<Integer> st = new HashSet<>();
     for (int i = 0; i < n; i++) {
-      int x = arr[i];
-      int count = 1;
-      while (linear_Search(arr, x + 1) == true) {
-        x += 1;
-        count += 1;
+      st.add(arr[i]);
+    }
+    int longest = 1;
+    for (int it : st) {
+      if (!st.contains(it - 1)) {
+        int x = it;
+        int count = 1;
+        while (st.contains(x + 1)) {
+          x += 1;
+          count += 1;
+        }
+        longest = Math.max(longest, count);
       }
-      longest = Math.max(longest, count);
     }
     return longest;
   }
