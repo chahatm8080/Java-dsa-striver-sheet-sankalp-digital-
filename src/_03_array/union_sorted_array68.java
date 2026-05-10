@@ -1,3 +1,5 @@
+package _03_array;
+
 import java.util.*;
 
 class Solution {
