@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class majorityElement {
   public int majElement(int[] arr) {
     // int n = arr.length;
     // for (int i = 0; i < n; i++) {
@@ -54,7 +54,7 @@ class Solution {
 class majority_element76 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    majorityElement sol = new majorityElement();
     System.out.println("Enter size of array: ");
     int n = sc.nextInt();
     int arr[] = new int[n];

@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class longestSumZero {
   public int longest_subarraysum(int[] arr) {
     // int n = arr.length;
     // int maxi = 0;
@@ -35,7 +35,7 @@ class Solution {
 class longest_subarray_zero_sumk73 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    longestSumZero sol = new longestSumZero();
     System.out.println("Enter size of array:");
     int n = sc.nextInt();
     int arr[] = new int[n];

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class permutation {
   public int[] next_Permutation(int[] arr) {
     int n = arr.length;
     int pivot = -1;
@@ -33,7 +33,7 @@ class Solution {
 
 class next_Permutation81 {
   public static void main(String[] args) {
-    Solution sol = new Solution();
+    permutation sol = new permutation();
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter size of arr: ");
     int n = sc.nextInt();

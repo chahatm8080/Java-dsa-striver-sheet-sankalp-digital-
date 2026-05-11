@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class palindrome {
   public boolean string_Palindrome(String st) {
     int l = 0;
     int r = st.length() - 1;
@@ -22,7 +22,7 @@ class Solution {
 
 public class check_String_Palindrome {
   public static void main(String[] args) {
-    Solution solution = new Solution();
+    palindrome solution = new palindrome();
     Scanner sc = new Scanner(System.in);
     String st = sc.nextLine();
     System.out.println(solution.string_Palindrome(st));

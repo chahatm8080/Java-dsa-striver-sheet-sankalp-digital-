@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class arrangeElements {
   public int[] reElementBySign(int[] arr) {
     int n = arr.length;
     // List<Integer> positive = new ArrayList<>();
@@ -34,7 +34,7 @@ class Solution {
 
 class rearrange_Elements_By_Sign80 {
   public static void main(String[] args) {
-    Solution sol = new Solution();
+    arrangeElements sol = new arrangeElements();
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter size of array:");
     int n = sc.nextInt();

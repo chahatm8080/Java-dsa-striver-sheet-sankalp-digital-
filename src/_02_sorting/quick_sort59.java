@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class quickSort {
   public void qckSort(int[] arr, int low, int high) {
     if (low < high) {
       int pivot = partition(arr, low, high);
@@ -35,7 +35,7 @@ class Solution {
 
 class quick_sort59 {
   public static void main(String[] args) {
-    Solution sol = new Solution();
+    quickSort sol = new quickSort();
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter size of array");
     int n = sc.nextInt();

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class bubble {
   // public static void bubbleSort(int[] arr, int n) {
   // for (int i = n - 1; i >= 0; i--) {
   // int maxi = i;
@@ -37,7 +37,7 @@ class Solution {
 
 class bubble_sort54 {
   public static void main(String[] args) {
-    Solution sol = new Solution();
+    bubble sol = new bubble();
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter size of array");
     int n = sc.nextInt();

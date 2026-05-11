@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class twoSum {
   public int[] two_sum(int[] arr, int target) {
     // int n = arr.length;
     // for (int i = 0; i < n; i++) {
@@ -56,7 +56,7 @@ class Solution {
 class two_sum74 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    twoSum sol = new twoSum();
     System.out.println("Enter size of array:");
     int n = sc.nextInt();
     int target = 9;

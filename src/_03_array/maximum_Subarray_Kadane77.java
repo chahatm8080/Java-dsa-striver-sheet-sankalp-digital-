@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class kadane {
   public int kadanesMaxSum(int[] arr) {
     int n = arr.length;
     long sum = 0;
@@ -22,7 +22,7 @@ class Solution {
 class maximum_Subarray_Kadane77 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    kadane sol = new kadane();
     System.out.println("Enter size of array: ");
     int n = sc.nextInt();
     int arr[] = new int[n];

@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Solution {
-  public static void merge(int[] arr, int low, int mid, int high) {
+class mSort {
+  public void merge(int[] arr, int low, int mid, int high) {
     List<Integer> temp = new ArrayList<>();
     int left = low;
     int right = mid + 1;
@@ -25,7 +25,7 @@ class Solution {
     }
   }
 
-  public static void mergeSort(int[] arr, int low, int high) {
+  public void mergeSort(int[] arr, int low, int high) {
     if (low >= high)
       return;
     int mid = (low + high) / 2;
@@ -38,6 +38,7 @@ class Solution {
 class merge_sort56 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
+    mSort sol = new mSort();
     System.out.println("Enter size of array");
     int n = sc.nextInt();
     int arr[] = new int[n];
@@ -45,7 +46,7 @@ class merge_sort56 {
     for (int i = 0; i < n; i++) {
       arr[i] = sc.nextInt();
     }
-    Solution.mergeSort(arr, 0, arr.length - 1);
+    sol.mergeSort(arr, 0, arr.length - 1);
     for (int num : arr) {
       System.out.print(num + " ");
     }

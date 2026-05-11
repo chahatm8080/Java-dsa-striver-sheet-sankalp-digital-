@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class zeroMatrix {
   public int[][] matrixZero(int[][] matrix, int m, int n) {
     boolean firstRow = false;
     boolean firstColumn = false;
@@ -39,7 +39,7 @@ class Solution {
 
 class set_matrix_zero84 {
   public static void main(String[] args) {
-    Solution sol = new Solution();
+    zeroMatrix sol = new zeroMatrix();
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter the Size of m elements");
     int m = sc.nextInt();

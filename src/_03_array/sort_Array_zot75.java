@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class sort {
   public void sortColor(int[] arr) {
     // int n = arr.length;
     // int count0 = 0, count1 = 0, count2 = 0;
@@ -54,7 +54,7 @@ class Solution {
 class sort_Array_zot75 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    sort sol = new sort();
     System.out.println("Enter size of array:");
     int n = sc.nextInt();
     int arr[] = new int[n];

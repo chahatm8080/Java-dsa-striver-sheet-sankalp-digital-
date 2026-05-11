@@ -1,4 +1,4 @@
-class Solution {
+class singleNumber {
   // Function to find the single element using a hash array
   public int getSingleElement(int[] arr) {
     // int n = arr.length;
@@ -36,7 +36,7 @@ class Solution {
 class single_number_fromTwice71 {
   public static void main(String[] args) {
     int[] arr = { 4, 1, 2, 1, 2, 5 };
-    Solution obj = new Solution();
+    singleNumber obj = new singleNumber();
     int ans = obj.getSingleElement(arr);
     System.out.println("The single element is: " + ans);
   }

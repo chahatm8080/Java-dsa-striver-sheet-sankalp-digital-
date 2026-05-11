@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class maximumConsecutive{
   public int maxConsecutiveOne(int[] arr) {
     int n = arr.length;
     int count = 0;
@@ -19,7 +19,7 @@ class Solution {
 class maximum_consecutive_ones70 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    maximumConsecutive sol = new maximumConsecutive();
     System.out.println("Enter size of array:");
     int n = sc.nextInt();
     int arr[] = new int[n];

@@ -1,8 +1,6 @@
-package _03_array;
-
 import java.util.*;
 
-class Solution {
+class unionSort {
   public List<Integer> union_sorted_array(int[] arr1, int[] arr2, int n, int m) {
     List<Integer> Union = new ArrayList<>();
 
@@ -84,7 +82,7 @@ class union_sorted_array68 {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution obj = new Solution();
+    unionSort obj = new unionSort();
     System.out.println("Enter n1 Size of array");
     int n1 = sc.nextInt();
     int arr[] = new int[n1];

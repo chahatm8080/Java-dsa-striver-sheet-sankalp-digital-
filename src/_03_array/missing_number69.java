@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class missingNumber {
   public int missing_number(int[] arr) {
     // int sum = n1 * (n1 + 1) / 2;
     // int array_Sum = 0;
@@ -32,7 +32,7 @@ class Solution {
 class missing_number69 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    missingNumber sol = new missingNumber();
     System.out.println("Enter size of array:");
     int n = sc.nextInt();
     int arr[] = new int[n];

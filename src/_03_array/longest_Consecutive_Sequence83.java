@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-class Solution {
+class majority {
   // public boolean linear_Search(int[] arr, int elmnt) {
   // int n = arr.length;
   // for (int i = 0; i < n; i++) {
@@ -37,7 +37,7 @@ class Solution {
 
 class longest_Consecutive_Sequence83 {
   public static void main(String[] args) {
-    Solution sol = new Solution();
+    majority sol = new majority();
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter size of arr: ");
     int n = sc.nextInt();

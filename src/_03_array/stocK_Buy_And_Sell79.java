@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Solution {
+class stock {
   public int stockBuySell(int[] arr) {
     // --------------- Bruteforce method
     // int maxi = 0;
@@ -36,7 +36,7 @@ class Solution {
 class stocK_Buy_And_Sell79 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    Solution sol = new Solution();
+    stock sol = new stock();
     System.out.println("Enter size of array: ");
     int n = sc.nextInt();
     int arr[] = new int[n];
