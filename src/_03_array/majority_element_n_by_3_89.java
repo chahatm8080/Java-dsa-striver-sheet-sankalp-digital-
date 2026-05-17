@@ -61,5 +61,6 @@ class majority_element_n_by_3_89 {
       System.out.print(it + " ,");
     }
     System.out.println();
+    sc.close();
   }
 }
