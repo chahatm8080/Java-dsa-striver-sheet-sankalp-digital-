@@ -1,47 +1,41 @@
 // import java.util.*;
 
-// class minimum_Bouquets {
-
-//   private static boolean canMake(int[] bloomDay, int day, int m, int k) {
-//     int count = 0;
-//     int bouquets = 0;
-
-//     for (int bloom : bloomDay) {
-//       if (bloom <= day) {
-//         count++;
-//       } else {
-//         bouquets += count / k;
-//         count = 0;
-//       }
-//     }
-
-//     bouquets += count / k;
-
-//     return bouquets >= m;
-//   }
+// public class minimum_Bouquets {
 
 //   public static int minDays(int[] bloomDay, int m, int k) {
 //     if ((long) m * k > bloomDay.length)
 //       return -1;
 
-//     int low = Integer.MAX_VALUE;
-//     int high = Integer.MIN_VALUE;
+//     int minDay = Integer.MAX_VALUE;
+//     int maxDay = Integer.MIN_VALUE;
 
 //     for (int day : bloomDay) {
-//       low = Math.min(low, day);
-//       high = Math.max(high, day);
+//       minDay = Math.min(minDay, day);
+//       maxDay = Math.max(maxDay, day);
 //     }
 
-//     while (low <= high) {
-//       int mid = low + (high - low) / 2;
+//     for (int day = minDay; day <= maxDay; day++) {
 
-//       if (canMake(bloomDay, mid, m, k))
-//         high = mid - 1;
-//       else
-//         low = mid + 1;
+//       int count = 0;
+//       int bouquets = 0;
+
+//       for (int bloom : bloomDay) {
+//         if (bloom <= day) {
+//           count++;
+//           if (count == k) {
+//             bouquets++;
+//             count = 0;
+//           }
+//         } else {
+//           count = 0;
+//         }
+//       }
+
+//       if (bouquets >= m)
+//         return day;
 //     }
 
-//     return low;
+//     return -1;
 //   }
 
 //   public static void main(String[] args) {
@@ -65,42 +59,48 @@
 
 import java.util.*;
 
-public class minimum_Bouquets {
+class minimum_Bouquets {
+
+  private static boolean canMake(int[] bloomDay, int day, int m, int k) {
+    int count = 0;
+    int bouquets = 0;
+
+    for (int bloom : bloomDay) {
+      if (bloom <= day) {
+        count++;
+      } else {
+        bouquets += count / k;
+        count = 0;
+      }
+    }
+
+    bouquets += count / k;
+
+    return bouquets >= m;
+  }
 
   public static int minDays(int[] bloomDay, int m, int k) {
     if ((long) m * k > bloomDay.length)
       return -1;
 
-    int minDay = Integer.MAX_VALUE;
-    int maxDay = Integer.MIN_VALUE;
+    int low = Integer.MAX_VALUE;
+    int high = Integer.MIN_VALUE;
 
     for (int day : bloomDay) {
-      minDay = Math.min(minDay, day);
-      maxDay = Math.max(maxDay, day);
+      low = Math.min(low, day);
+      high = Math.max(high, day);
     }
 
-    for (int day = minDay; day <= maxDay; day++) {
+    while (low <= high) {
+      int mid = low + (high - low) / 2;
 
-      int count = 0;
-      int bouquets = 0;
-
-      for (int bloom : bloomDay) {
-        if (bloom <= day) {
-          count++;
-          if (count == k) {
-            bouquets++;
-            count = 0;
-          }
-        } else {
-          count = 0;
-        }
-      }
-
-      if (bouquets >= m)
-        return day;
+      if (canMake(bloomDay, mid, m, k))
+        high = mid - 1;
+      else
+        low = mid + 1;
     }
 
-    return -1;
+    return low;
   }
 
   public static void main(String[] args) {
