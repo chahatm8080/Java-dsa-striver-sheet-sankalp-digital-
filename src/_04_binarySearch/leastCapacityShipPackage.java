@@ -1,10 +1,14 @@
+// 
+
 import java.util.*;
 
-class shipPackage {
-  public int days(int[] weight, int capacity) {
+class Solution {
+
+  int daysNeeded(int[] weights, int capacity) {
     int days = 1;
     int currentLoad = 0;
-    for (int w : weight) {
+
+    for (int w : weights) {
       if (currentLoad + w > capacity) {
         days++;
         currentLoad = w;
@@ -15,32 +19,28 @@ class shipPackage {
     return days;
   }
 
-  public int shipWithinDays(int[] weight, int d) {
-    int left = Arrays.stream(weight).max().getAsInt();
-    int right = Arrays.stream(weight).sum();
-    for (int capacity = left; capacity <= right; capacity++) {
-      int needed = days(weight, capacity);
+  int shipWithinDays(int[] weights, int d) {
+    int left = Arrays.stream(weights).max().getAsInt();
+    int right = Arrays.stream(weights).sum();
+
+    while (left < right) {
+      int mid = left + (right - left) / 2;
+      int needed = daysNeeded(weights, mid);
       if (needed <= d) {
-        return capacity;
+        right = mid;
+      } else {
+        left = mid + 1;
       }
     }
-    return right;
+    return left;
   }
 }
 
 class leastCapacityShipPackage {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Enter packages: ");
-    int n = sc.nextInt();
-    System.out.println("Enter the weight of package");
-    int[] weights = new int[n];
-    for (int i = 0; i < n; i++) {
-      weights[i] = sc.nextInt();
-    }
+    int[] weights = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     int d = 5;
-    shipPackage sol = new shipPackage();
+    Solution sol = new Solution();
     System.out.println(sol.shipWithinDays(weights, d));
-    sc.close();
   }
 }
