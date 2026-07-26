@@ -22,14 +22,23 @@ class insertBegLL {
     System.out.println();
   }
 
-  public static ListNode insertAtBeginning(ListNode head, int value) {
+  // public static ListNode insertAtBeginning(ListNode head, int value) {
+
+  // ListNode newNode = new ListNode(value);
+
+  // newNode.next = head;
+
+  // head = newNode;
+
+  // return head;
+  // }
+  public static ListNode insertAtEnd(ListNode head, int value) {
 
     ListNode newNode = new ListNode(value);
-
-    newNode.next = head;
-
-    head = newNode;
-
+    while (head.next == null) {
+      head.next = newNode;
+      newNode = null;
+    }
     return head;
   }
 
@@ -62,10 +71,13 @@ class insertBegLL {
     System.out.println("Original Linked List:");
     traverse(head);
 
-    System.out.print("Enter value to insert at beginning: ");
+    // System.out.print("Enter value to insert at beginning: ");
+    // int x = sc.nextInt();
+    System.out.print("Enter value to insert at end: ");
     int x = sc.nextInt();
 
-    head = insertAtBeginning(head, x);
+    // head = insertAtBeginning(head, x);
+    head = insertAtEnd(head, x);
 
     System.out.println("Linked List After Insertion:");
     traverse(head);
