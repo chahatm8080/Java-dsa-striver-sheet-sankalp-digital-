@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 class Node {
-  int data;
+  int val;
   Node prev;
   Node next;
 
-  Node(int data) {
-    this.data = data;
+  Node(int val) {
+    this.val = val;
   }
 }
 
@@ -47,7 +47,7 @@ class insertDeleteDLL {
   public static void traverse(Node head) {
 
     while (head != null) {
-      System.out.print(head.data + " ");
+      System.out.print(head.val + " ");
       head = head.next;
     }
 
