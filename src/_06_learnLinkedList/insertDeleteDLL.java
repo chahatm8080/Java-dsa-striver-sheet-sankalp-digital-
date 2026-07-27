@@ -12,50 +12,44 @@ class Node {
 
 class insertDeleteDLL {
 
-  public static Node insertAtBeginning(Node node, int value) {
+  public static Node insertAtBeginning(Node head, int value) {
 
-    while (node.prev != null) {
-      node = node.prev;
+    Node newNode = new Node(value);
+
+    if (head == null) {
+      return newNode;
     }
 
-    Node temp = new Node(value);
+    newNode.next = head;
+    head.prev = newNode;
 
-    temp.next = node;
-    node.prev = temp;
-
-    return temp;
+    return newNode;
   }
 
-  public static Node insertAtEnd(Node node, int value) {
+  public static Node insertAtEnd(Node head, int value) {
 
-    while (node.next != null) {
-      node = node.next;
+    Node newNode = new Node(value);
+
+    if (head == null) {
+      return newNode;
     }
 
-    Node temp = new Node(value);
+    Node temp = head;
 
-    temp.prev = node;
-    node.next = temp;
-
-    while (temp.prev != null) {
-      temp = temp.prev;
+    while (temp.next != null) {
+      temp = temp.next;
     }
 
-    return temp;
+    temp.next = newNode;
+    newNode.prev = temp;
+
+    return head;
   }
 
   public static Node insertAtPosition(Node head, int value, int position) {
 
-    Node newNode = new Node(value);
-
     if (position == 1) {
-      newNode.next = head;
-
-      if (head != null) {
-        head.prev = newNode;
-      }
-
-      return newNode;
+      return insertAtBeginning(head, value);
     }
 
     Node temp = head;
@@ -68,6 +62,8 @@ class insertDeleteDLL {
       System.out.println("Invalid Position");
       return head;
     }
+
+    Node newNode = new Node(value);
 
     newNode.next = temp.next;
     newNode.prev = temp;
@@ -118,34 +114,31 @@ class insertDeleteDLL {
       }
     }
 
-    System.out.println("Original Doubly Linked List:");
+    System.out.println("\nOriginal List:");
     traverse(head);
 
-    System.out.print("Enter value to insert at beginning: ");
+    System.out.print("\nEnter value to insert at beginning: ");
     int begin = sc.nextInt();
 
     head = insertAtBeginning(head, begin);
 
-    System.out.println("After Inserting at Beginning:");
     traverse(head);
 
-    System.out.print("Enter value to insert at end: ");
+    System.out.print("\nEnter value to insert at end: ");
     int end = sc.nextInt();
 
     head = insertAtEnd(head, end);
 
-    System.out.println("After Inserting at End:");
     traverse(head);
 
-    System.out.print("Enter position to insert: ");
+    System.out.print("\nEnter position: ");
     int pos = sc.nextInt();
 
-    System.out.print("Enter value to insert: ");
+    System.out.print("Enter value: ");
     int value = sc.nextInt();
 
     head = insertAtPosition(head, value, pos);
 
-    System.out.println("After Inserting at Position:");
     traverse(head);
 
     sc.close();
