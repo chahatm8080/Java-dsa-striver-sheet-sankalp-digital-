@@ -44,6 +44,43 @@ class insertDeleteDLL {
     return temp;
   }
 
+  public static Node insertAtPosition(Node head, int value, int position) {
+
+    Node newNode = new Node(value);
+
+    if (position == 1) {
+      newNode.next = head;
+
+      if (head != null) {
+        head.prev = newNode;
+      }
+
+      return newNode;
+    }
+
+    Node temp = head;
+
+    for (int i = 1; i < position - 1 && temp != null; i++) {
+      temp = temp.next;
+    }
+
+    if (temp == null) {
+      System.out.println("Invalid Position");
+      return head;
+    }
+
+    newNode.next = temp.next;
+    newNode.prev = temp;
+
+    if (temp.next != null) {
+      temp.next.prev = newNode;
+    }
+
+    temp.next = newNode;
+
+    return head;
+  }
+
   public static void traverse(Node head) {
 
     while (head != null) {
@@ -98,6 +135,17 @@ class insertDeleteDLL {
     head = insertAtEnd(head, end);
 
     System.out.println("After Inserting at End:");
+    traverse(head);
+
+    System.out.print("Enter position to insert: ");
+    int pos = sc.nextInt();
+
+    System.out.print("Enter value to insert: ");
+    int value = sc.nextInt();
+
+    head = insertAtPosition(head, value, pos);
+
+    System.out.println("After Inserting at Position:");
     traverse(head);
 
     sc.close();
